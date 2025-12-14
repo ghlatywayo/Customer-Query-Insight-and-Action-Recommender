@@ -79,4 +79,5 @@ This project demonstrates how analytics + intelligence + recommendations can dir
 
 🎬 Demo Video
 
-Watch the 3-minute walkthrough →
+Watch the walkthrough → https://www.loom.com/share/eae38104790a47639861164c14d94d98
+
