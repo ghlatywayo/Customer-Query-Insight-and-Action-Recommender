@@ -1,76 +1,63 @@
 # DStv Zimbabwe — Customer Query Insight & Action Recommender
 
-A prescriptive analytics application that analyzes customer support queries for DStv Zimbabwe and recommends operational actions to reduce escalations and improve customer experience.
+A prescriptive analytics web application that analyzes customer support queries for DStv Zimbabwe and recommends operational actions to reduce escalations and improve customer experience.
 
 # The Problem
-DStv Zimbabwe handles thousands of customer support interactions every month across call centers, walk-in centers, and digital channels. These queries range from common technical issues such as E16 signal errors and decoder faults to payment failures, subscription renewals, and account suspensions.
+DStv Zimbabwe handles thousands of customer support queries each month across regions, channels, and issue types.
+While operational teams can see what issues are occurring, they often struggle to understand which issues matter most, which are likely to escalate, and what actions should be taken immediately.
 
-Customer service managers face three persistent challenges. First, issues are often identified after they have already escalated, resulting in customer dissatisfaction and repeat calls. Second, traditional dashboards show what is happening but not why it is happening or what actions should be taken. Third, high-volume issues tend to overwhelm agents and supervisors, making it difficult to prioritize interventions across regions and categories.
+Escalations increase operational costs, customer dissatisfaction, and resolution times. Without a data-driven decision support system, supervisors must rely on intuition rather than evidence when prioritizing interventions.
 
-As a result, operational teams spend more time reacting to problems instead of proactively preventing them. This leads to longer resolution times, higher escalation rates, and increased pressure on support teams.
+This problem is common across subscription-based service providers, where small operational failures (e.g., payment issues or signal errors) can quickly lead to customer churn if not proactively managed.
 
 # The Solution
 
-This project introduces a prescriptive analytics tool that goes beyond reporting to actively recommend actions.
-The application automatically:
-- Analyzes historical customer query data
-- Classifies incoming queries into common issue categories
-- Detects recent spikes and emerging trends
-- Predicts which tickets are likely to escalate
-- Generates actionable recommendations for managers
+This application is a **prescriptive analytics system** that transforms raw customer query data into **actionable recommendations.**
 
-Instead of asking “What happened?”, the system answers:
-**“What is happening now, what is likely to happen next, and what should we do about it?”**
+It combines:
+- **Descriptive analytics** to summarize query volumes and escalation rates
+- **Predictive models** to classify queries and estimate escalation risk
+- **Prescriptive logic** to recommend concrete operational actions
 
-The intelligence comes from combining:
-- Machine learning (text classification + escalation prediction)
-- Analytics (trend detection and regional insights)
-- Rule-based decision logic (prescriptive recommendations tied to business actions)
+Instead of stopping at insights, the system explicitly answers:
+**“So what should the business do next?”**
 
 🚀 Live Demo
 
-Try it here →
+Try it here → https://customer-query-insight-and-action-recommender-sbpsjavkqtssmvz8.streamlit.app
 
 # How It Works
 
-1. Step 1: Customer query data is loaded or uploaded into the system
-2. Step 2: The system analyzes query text, categories, regions, and resolution times
-3. Step 3: Managers receive insights, risk scores, and recommended actions
+**1. User views the dashboard**
+Key KPIs (total queries, escalation rate, top issue) summarize current operations.
+**2. System analyzes patterns**
+Machine learning models classify query text and estimate escalation probability.
+**3. Prescriptive insight is generated**
+The system highlights dominant drivers of escalation and recommends operational actions.
 
 # The Analytics Behind It
-**- Data Used**
-      - Customer query text
-      - Issue category
-      - Region (all Zimbabwe provinces)
-      - Resolution time
-      - Escalation outcome
-
-**- Models**
-     - TF-IDF + Logistic Regression for query classification
-     - Random Forest for escalation prediction
-     - Prescriptive Logic
-     - Issue spikes trigger operational recommendations
-     - High escalation risk triggers supervisor intervention
-     - Regional concentration triggers targeted technical responses
+- **Data**: Synthetic but realistic DStv Zimbabwe customer query dataset (2,000 rows, all regions)
+- **Text Modeling**: TF-IDF vectorization
+- **Classification**: Logistic Regression (query category)
+- **Risk Prediction**: Random Forest (escalation probability)
+- **Prescriptive Layer**: Rule-based logic driven by recent query patterns
 
 # Example Output
 
-Example recommendations generated by the system:
-- “E16 error spike detected — initiate signal uplink diagnostics and send proactive SMS to affected regions.”
-- “Payment failures increasing — audit payment gateway and notify billing operations.”
-- “High escalation probability (82%) — recommend immediate supervisor review.”
+Dashboard with Prescriptive “So What?” Insight
+Identifies Payment Failure as the leading escalation driver
+Recommends proactive payment system monitoring and automated SMS alerts
+Supports decisions with real-time data trends
 
-The dashboard also displays:
-- Query trends over time
-- Top issue categories
-- Escalation rates
-- Regional distributions
+(Screenshots included in /assets folder)
 
 # Technology Stack
 - Frontend: Streamlit
 - Analytics & ML: Python, pandas, scikit-learn
 - Text Processing: TF-IDF Vectorization
 - Models: Logistic Regression, Random Forest
+- Visualization: Streamlit charts
+- Deployment: Streamlit Cloud
 - Data: Synthetic DStv Zimbabwe customer query dataset (2,000 records)
 
 # About This Project
@@ -82,12 +69,11 @@ LinkedIn: www.linkedin.com/in/hlatywayo-gamuchirai-t-76a08734
 Email: gthlatywayo@gmail.com
 
 # Future Possibilities
-With more time and real production data, this system could be expanded to:
-- Integrate live call-center or CRM data
-- Automatically trigger SMS or WhatsApp notifications
-- Add optimization for staffing and resource allocation
-- Incorporate customer churn prediction
-- Deploy as a full decision-support system across African markets
+With more time, this system could be extended to:
+- Optimize agent staffing levels using escalation forecasts
+- Integrate real DStv operational data
+- Trigger automated alerts or tickets in real time
+- Add cost-based optimization for intervention prioritization
 
 This project demonstrates how analytics + intelligence + recommendations can directly support real operational decisions in media and telecommunications.
 
