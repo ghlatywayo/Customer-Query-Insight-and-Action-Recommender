@@ -4,6 +4,8 @@ import pickle
 from pathlib import Path
 import numpy as np
 import scipy.sparse as sp
+from optimize_allocation import optimize_supervisor_allocation
+
 
 # ---------- PAGE SETUP ----------
 st.set_page_config(
@@ -41,8 +43,15 @@ vectorizer, category_clf, escalation_clf = load_models()
 # ---------- SIDEBAR ----------
 page = st.sidebar.selectbox(
     "Select View",
-    ["Dashboard", "Query Analyzer", "Escalation Predictor", "Action Recommender"]
+    [
+        "Dashboard",
+        "Query Analyzer",
+        "Escalation Predictor",
+        "Action Recommender",
+        "Prescriptive Optimizer"
+    ]
 )
+
 
 # ---------- DASHBOARD ----------
 if page == "Dashboard":
