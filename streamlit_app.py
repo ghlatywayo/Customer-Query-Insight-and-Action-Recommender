@@ -140,3 +140,30 @@ elif page == "Action Recommender":
     else:
         st.success("System stable — no immediate actions required.")
 
+elif page == "Prescriptive Optimizer":
+    st.subheader("🔧 Prescriptive Optimization: Supervisor Allocation")
+
+    st.write(
+        "This module uses mathematical optimization to allocate limited supervisor "
+        "capacity across issue categories in order to minimize expected escalation costs."
+    )
+
+    agents = st.slider(
+        "Available Supervisors",
+        min_value=1,
+        max_value=10,
+        value=5
+    )
+
+    allocation = optimize_supervisor_allocation(df, agents)
+
+    st.markdown("### Optimal Allocation")
+    st.dataframe(
+        allocation[["Category", "Allocated_Agents"]]
+        .sort_values("Allocated_Agents", ascending=False)
+    )
+
+    st.info(
+        "This allocation represents the cost-minimizing assignment of supervisors "
+        "given capacity constraints, moving from prediction to true prescriptive analytics."
+    )
