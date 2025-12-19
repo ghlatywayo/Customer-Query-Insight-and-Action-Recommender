@@ -4,4 +4,5 @@ numpy
 scikit-learn
 scipy
 matplotlib
+pulp
 
